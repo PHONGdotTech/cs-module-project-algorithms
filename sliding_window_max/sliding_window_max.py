@@ -3,10 +3,25 @@ Input: a List of integers as well as an integer `k` representing the size of the
 Returns: a List of integers
 '''
 def sliding_window_max(nums, k):
-    # Your code here
+    start = 0
+    end = k-1
+    arr = []
 
-    pass
+    while end <= len(nums)-1:
+        maximum = None
+        for i in range(start, end+1):
+            if maximum == None:
+                maximum = nums[i]
 
+            if nums[i] > maximum:
+                maximum = nums[i]
+            
+        arr.append(maximum)
+
+        start += 1
+        end += 1
+
+    return arr
 
 if __name__ == '__main__':
     # Use the main function here to test out your implementation 
